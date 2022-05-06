@@ -18,7 +18,7 @@ function Letter({ letterPos, attemptVal }) {
     (correct ? "correct" : almost ? "almost" : "error");
   useEffect(() => {
     if (letter !== "" && !correct && !almost) {
-      setDisabledLetters([...disabledLetters, letter]);
+      setDisabledLetters((prev) => [...prev, letter]);
     }
   }, [currAttempt.attempt]);
   return (
